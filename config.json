@@ -1,0 +1,23 @@
+{
+    "database": {
+      "DRIVER": "ODBC Driver 17 for SQL Server",
+      "SERVER": "192.168.1.60",
+      "UID": "sa",
+      "PWD": "H0rt@1!ca5",
+      "DBNAME": "CORP_CAISP"
+    },
+    "paths": {
+      "images": "/home/jefferson/Relatorio/img/logo.png",
+      "logs": "/home/jefferson/Relatorio/consumer.log"
+    },
+    "appSettings": {
+      "debug": true,
+      "maxConnections": 10
+    },
+    "urlapi":{
+        "urlconfirmacao": "http://localhost:8000",
+        "urlapiwhats":"http://192.168.1.61:3000/client/sendMessage/appcontagem"
+
+    }
+  }
+  

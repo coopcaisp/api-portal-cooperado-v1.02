@@ -1,0 +1,10 @@
+ignore:
+  - "*.log"
+  - "*.tmp"
+  - "__pycache__"
+  - ".gitignore"
+  - "backups"
+  - "app-portalcompras"
+  - "virtualenv"
+  - "build"
+  - ".git"
