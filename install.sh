@@ -4,12 +4,17 @@
 echo "Atualizando pacotes e instalando dependências..."
 sudo apt update && sudo apt upgrade -y
 sudo apt install -y python3 python3-pip python3-venv curl wget
-sudo apt install sqlite3 
-sudo apt install python3 
-sudo apt install python3-pip
-sudo apt install python3-venv
-sudo apt install curl
 
+# Instalar o driver ODBC 2017 para SQL Server
+echo "Instalando o driver ODBC 2017 para SQL Server..."
+if ! command -v odbcinst &> /dev/null
+then
+    sudo apt install -y odbcinst odbcinst1debian2 unixodbc
+fi
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+sudo curl -o /etc/apt/sources.list.d/mssql-release.list https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/prod.list
+sudo apt update
+ACCEPT_EULA=Y sudo apt install -y msodbcsql17
 
 # Baixar e instalar o RabbitMQ
 if ! command -v rabbitmqctl &> /dev/null
